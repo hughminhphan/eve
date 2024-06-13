@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "EVE - Eco-Advisor",
+  "version": "1.0",
+  "description": "A Chrome extension to advise users on eco-friendly shopping.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
